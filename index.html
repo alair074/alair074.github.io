@@ -247,7 +247,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://note.alairs.cn/2019/08/25/关于typecho无法登陆/">
+    <link itemprop="mainEntityOfPage" href="https://note.alairs.cn/2019/08/25/Typecho不用进入后台如何关闭已启用的插件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alair Lee">
@@ -261,7 +261,7 @@
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
             
-            <a href="/2019/08/25/关于typecho无法登陆/" class="post-title-link" itemprop="url">关于typecho无法登陆</a>
+            <a href="/2019/08/25/Typecho不用进入后台如何关闭已启用的插件/" class="post-title-link" itemprop="url">Typecho不用进入后台如何关闭已启用的插件</a>
           
         </h1>
 
@@ -276,8 +276,12 @@
                 
               
 
-              <time title="创建时间：2019-08-25 23:36:15" itemprop="dateCreated datePublished" datetime="2019-08-25T23:36:15+08:00">2019-08-25</time>
+              <time title="创建时间：2019-08-25 23:36:15 / 修改时间：23:53:28" itemprop="dateCreated datePublished" datetime="2019-08-25T23:36:15+08:00">2019-08-25</time>
             </span>
+          
+            
+
+            
           
 
           
@@ -291,7 +295,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          
+          <p>前一段时间，我一个刚玩儿网站的同学在用typecho的时候给自己网站安装了一个typecho的插件（LoginLimit），但是在它安装后，配置并起用这个这个插件的时候发现网站后台无法登陆了。</p>
+<p>于是乎他就来问我，我发现就是LoginLimit这个插件的原因，因为这个插件实在N年前作者开发的，已经不能兼容现在得typecho的版本了。所以想要解决这个问题，就需要关闭这个插件。</p>
+<p>我看了半天typecho的数据库终于发现了控制typecho的插件启用的表。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">typecho_options</span><br></pre></td></tr></table></figure>
+
+<p>进入表，直接简单暴力，修改表中的列<strong>plugins</strong>的值为</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a:0:&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:%5CUsers%5CAlairLee%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1566748312797.png" alt="1566748312797"></p>
+
         
       
     </div>
@@ -817,7 +830,9 @@
         
           
         
-        <span class="site-state-item-count">7</span>
+          
+        
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
