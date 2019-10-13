@@ -54,19 +54,19 @@
   };
 </script>
 
-  <meta name="description" content="好记性不如烂笔头，学习再多的技术，了解再多的知识，也不如自己写一写。在这个信息技术发达的时代，我们所知的我接触的技术，信息多得让我们眼花缭乱。作为一个萌新的网络行业的工作者，也渐渐的意识到，要想提升自己的工作效">
-<meta name="keywords" content="关于">
+  <meta name="description" content="Windows文件命名特性/不符合规范的规则：   示例 符号    upload.php. .   upload.php (空格)   upload.php:1.jpg :   upload.php::$DATA NTFS ADS特性::$DATA   upload.php::$DATA…… ::$DATA……   由于Windows系统的特性，会自动去掉命名中不符合规范的内容。">
+<meta name="keywords" content="CTF,upload,上传绕过">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前言">
-<meta property="og:url" content="https://note.alairs.cn/2019/08/23/preface/index.html">
+<meta property="og:title" content="web文件上传绕过">
+<meta property="og:url" content="https://note.alairs.cn/2019/08/29/web文件上传绕过/index.html">
 <meta property="og:site_name" content="Alairs Notepad">
-<meta property="og:description" content="好记性不如烂笔头，学习再多的技术，了解再多的知识，也不如自己写一写。在这个信息技术发达的时代，我们所知的我接触的技术，信息多得让我们眼花缭乱。作为一个萌新的网络行业的工作者，也渐渐的意识到，要想提升自己的工作效">
+<meta property="og:description" content="Windows文件命名特性/不符合规范的规则：   示例 符号    upload.php. .   upload.php (空格)   upload.php:1.jpg :   upload.php::$DATA NTFS ADS特性::$DATA   upload.php::$DATA…… ::$DATA……   由于Windows系统的特性，会自动去掉命名中不符合规范的内容。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-23T15:37:56.744Z">
+<meta property="og:updated_time" content="2019-08-29T07:18:54.202Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前言">
-<meta name="twitter:description" content="好记性不如烂笔头，学习再多的技术，了解再多的知识，也不如自己写一写。在这个信息技术发达的时代，我们所知的我接触的技术，信息多得让我们眼花缭乱。作为一个萌新的网络行业的工作者，也渐渐的意识到，要想提升自己的工作效">
-  <link rel="canonical" href="https://note.alairs.cn/2019/08/23/preface/">
+<meta name="twitter:title" content="web文件上传绕过">
+<meta name="twitter:description" content="Windows文件命名特性/不符合规范的规则：   示例 符号    upload.php. .   upload.php (空格)   upload.php:1.jpg :   upload.php::$DATA NTFS ADS特性::$DATA   upload.php::$DATA…… ::$DATA……   由于Windows系统的特性，会自动去掉命名中不符合规范的内容。">
+  <link rel="canonical" href="https://note.alairs.cn/2019/08/29/web文件上传绕过/">
 
 
 <script id="page-configurations">
@@ -80,7 +80,7 @@
   };
 </script>
 
-  <title>前言 | Alairs Notepad</title>
+  <title>web文件上传绕过 | Alairs Notepad</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -249,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://note.alairs.cn/2019/08/23/preface/">
+    <link itemprop="mainEntityOfPage" href="https://note.alairs.cn/2019/08/29/web文件上传绕过/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Alair Lee">
@@ -261,7 +261,7 @@
       <meta itemprop="name" content="Alairs Notepad">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">前言
+        <h1 class="post-title" itemprop="name headline">web文件上传绕过
 
           
         </h1>
@@ -277,7 +277,7 @@
                 
               
 
-              <time title="创建时间：2019-08-23 21:32:06 / 修改时间：23:37:56" itemprop="dateCreated datePublished" datetime="2019-08-23T21:32:06+08:00">2019-08-23</time>
+              <time title="创建时间：2019-08-29 15:10:25 / 修改时间：15:18:54" itemprop="dateCreated datePublished" datetime="2019-08-29T15:10:25+08:00">2019-08-29</time>
             </span>
           
             
@@ -290,7 +290,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/关于/" itemprop="url" rel="index"><span itemprop="name">关于</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/CTF/" itemprop="url" rel="index"><span itemprop="name">CTF</span></a></span>
 
                 
                 
@@ -309,11 +309,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>好记性不如烂笔头</strong>，学习再多的技术，了解再多的知识，也不如自己写一写。在这个信息技术发达的时代，我们所知的我接触的技术，信息多得让我们眼花缭乱。作为一个萌新的网络行业的工作者，也渐渐的意识到，要想提升自己的工作效</p>
-<a id="more"></a>
-
-<p>率，必须提升自己大脑的知识储备量；也作为一个信息技术的爱好者来说，不论什么新的技术都会去折腾一下，但是我的记性过目而忘，故想搭建一个网站来记录下自己的所学，记录下自己所获取的有价值，有意义的信息。</p>
-
+        <h3 id="Windows文件命名特性-不符合规范的规则："><a href="#Windows文件命名特性-不符合规范的规则：" class="headerlink" title="Windows文件命名特性/不符合规范的规则："></a>Windows文件命名特性/不符合规范的规则：</h3><table>
+<thead>
+<tr>
+<th>示例</th>
+<th>符号</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>upload.php.</td>
+<td>.</td>
+</tr>
+<tr>
+<td>upload.php</td>
+<td>(空格)</td>
+</tr>
+<tr>
+<td>upload.php:1.jpg</td>
+<td>:</td>
+</tr>
+<tr>
+<td>upload.php::$DATA</td>
+<td>NTFS ADS特性::$DATA</td>
+</tr>
+<tr>
+<td>upload.php::$DATA……</td>
+<td>::$DATA……</td>
+</tr>
+</tbody></table>
+<h5 id="由于Windows系统的特性，会自动去掉命名中不符合规范的内容。"><a href="#由于Windows系统的特性，会自动去掉命名中不符合规范的内容。" class="headerlink" title="由于Windows系统的特性，会自动去掉命名中不符合规范的内容。"></a>由于Windows系统的特性，会自动去掉命名中不符合规范的内容。</h5>
     </div>
 
     
@@ -328,7 +352,11 @@
           
           <div class="post-tags">
             
-              <a href="/tags/关于/" rel="tag"># 关于</a>
+              <a href="/tags/CTF/" rel="tag"># CTF</a>
+            
+              <a href="/tags/upload/" rel="tag"># upload</a>
+            
+              <a href="/tags/上传绕过/" rel="tag"># 上传绕过</a>
             
           </div>
         
@@ -338,14 +366,18 @@
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
               
+                <a href="/2019/08/26/关于隐写/" rel="next" title="关于隐写">
+                  <i class="fa fa-chevron-left"></i> 关于隐写
+                </a>
+              
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
               
-                <a href="/2019/08/23/sslscan/" rel="prev" title="Linux安装sslscan">
-                  Linux安装sslscan <i class="fa fa-chevron-right"></i>
+                <a href="/2019/10/13/pip-mirror/" rel="prev" title="pip-mirror">
+                  pip-mirror <i class="fa fa-chevron-right"></i>
                 </a>
               
             </div>
@@ -395,6 +427,10 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc">
+            <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows文件命名特性-不符合规范的规则："><span class="nav-number">1.</span> <span class="nav-text">Windows文件命名特性/不符合规范的规则：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#由于Windows系统的特性，会自动去掉命名中不符合规范的内容。"><span class="nav-number">1.0.1.</span> <span class="nav-text">由于Windows系统的特性，会自动去掉命名中不符合规范的内容。</span></a></li></ol></li></ol></li></ol></div>
+          </div>
+        
       </div>
       <!--/noindex-->
 
